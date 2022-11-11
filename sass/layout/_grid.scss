@@ -1,0 +1,5 @@
+.row {
+  max-width: 114rem; //1 rem = 10px since we set the font-size to 62.5% of the default value (usually 16px) so 114rem is equal to 1140px
+  background-color: red;
+  margin: 0 auto;  
+}
