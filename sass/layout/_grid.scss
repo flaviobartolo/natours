@@ -1,5 +1,45 @@
 .row {
-  max-width: 114rem; //1 rem = 10px since we set the font-size to 62.5% of the default value (usually 16px) so 114rem is equal to 1140px
-  background-color: red;
-  margin: 0 auto;  
+  max-width: $grid-width; //1 rem = 10px since we set the font-size to 62.5% of the default value (usually 16px) so 114rem is equal to 1140px
+  background-color: #eee;
+  margin: 0 auto;
+
+  &:not(:last-child) { // this translates into .row:not(:last-child) which means that all the style inside of this will not apply to the last row
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc((2 * (100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal})
+  }
+
+  .col-3-of-4 {
+    width: calc((3 * (100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal})
+  }
+
 }
