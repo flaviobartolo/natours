@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width; //1 rem = 10px since we set the font-size to 62.5% of the default value (usually 16px) so 114rem is equal to 1140px
-  background-color: #eee;
   margin: 0 auto;
 
   &:not(:last-child) { // this translates into .row:not(:last-child) which means that all the style inside of this will not apply to the last row
@@ -10,7 +9,6 @@
   @include clearfix;
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
