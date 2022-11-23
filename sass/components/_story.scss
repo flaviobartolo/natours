@@ -13,6 +13,7 @@
     width: 15rem;
     height: 15rem;
     float: left;
+    position: relative;
     shape-outside: circle(50% at 50% 50%); // shape-outside: we can wrap text to match the shape of the image; circle: first number is the radius of the circle and the other values are cx and cy (coordinate X and coordinate Y). see: https://www.freecodecamp.org/news/mastering-css-series-shape-outside-44d626270b25/
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
@@ -20,10 +21,36 @@
 
   &__image {
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
   }
 
   &__text {
     transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; // fixing a moving glitch, not really necessary in chrome newer versions
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__image {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
   }
 
 }
