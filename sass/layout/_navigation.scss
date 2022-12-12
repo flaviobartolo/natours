@@ -59,7 +59,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -100%;
     z-index: 1001;
 
     opacity: 0;
@@ -116,9 +116,12 @@
   &__checkbox:checked ~ &__background{
     transform: scale(80);
   }
+
   &__checkbox:checked ~ &__nav{
     width: 100%;
     opacity: 1;
+    left: 0;
+    //z-index: 1001;
   }
 
   // Icon
