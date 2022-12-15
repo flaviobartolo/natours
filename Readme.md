@@ -29,9 +29,8 @@ Install all the packages
 
 ### Running on a Dev environment
 
-1. ```npm install```
-2. ```npm run live-server```
-3. Open _Live Sass Compiler_ (if using vscode install the extension and click "Watch Sass" on bottom of your screen)
+1. ```npm run live-server```
+2. Open _Live Sass Compiler_ (if using vscode install the extension and click "Watch Sass" on bottom of your screen)
 
 ### Adding prefix and compiling for production development
 1. ```npm run build:css``` *this is going to add common browse prefixes and generate a compressed main.css file*
